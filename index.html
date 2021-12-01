@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>CoffeeWise</title>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="container d-flex flex-column align-items-center mt-5">
+      <div class="d-flex align-items-center gap-3 mb-1">
+        <img
+          class="coffee-bean"
+          src="/assets/coffee-beans.png"
+          alt="coffee beans"
+        />
+        <a href="/index.html"><h1>CoffeeWise</h1></a>
+        <img
+          class="coffee-bean"
+          src="/assets/coffee-beans.png"
+          alt="coffee beans"
+        />
+      </div>
+      <p class="lead">Track your caffeine intake wisely</p>
+    </header>
+
+    <!-- Coffee Knowledge Button -->
+    <a href="/page/coffee-knowledge.html"
+      ><div class="container quizApp">
+        Caffeine knowledge <i class="fas fa-arrow-circle-right"></i></div
+    ></a>
+
+    <!-- Select Form -->
+    <main class="main container">
+      <form class="container d-flex flex-column justify-content-center mb-5">
+        <div class="mt-5 mb-5">
+          <label class="mb-1">Hot or Cold</label>
+          <select
+            class="form-control temperature selectFilter mb-3"
+            data-target="category"
+          >
+            <option value="-1">-- Select --</option>
+            <option data-ref="hot">Hot</option>
+            <option data-ref="cold">Cold</option>
+          </select>
+
+          <label class="mb-1">Category</label>
+          <select
+            class="form-control category selectFilter mb-3"
+            data-target="drinks"
+          >
+            <option value="-1">-- Select --</option>
+            <option data-ref="brewedCoffee" data-belong="hot">
+              Brewed coffee
+            </option>
+            <option data-ref="espresso" data-belong="hot">
+              Espresso drinks
+            </option>
+            <option data-ref="icedCoffee" data-belong="cold">
+              Iced coffee
+            </option>
+            <option data-ref="icedEspresso" data-belong="cold">
+              Iced espresso drinks
+            </option>
+            <option data-ref="coldBrew" data-belong="cold">Cold brew</option>
+          </select>
+
+          <label class="mb-1">Drinks</label>
+          <select
+            class="form-control drinks selectFiltermmb-3"
+            id="selectedItem"
+          >
+            <option value="-1">-- Select --</option>
+            <option data-belong="brewedCoffee" value="light-roast">
+              Light Roast
+            </option>
+            <option data-belong="brewedCoffee" value="medium-roast">
+              Medium Roast
+            </option>
+            <option data-belong="brewedCoffee" value="dark-roast">
+              Dark Roast
+            </option>
+            <option data-belong="brewedCoffee" value="decaf-roast">
+              Brewed Decaf Coffee
+            </option>
+
+            <option data-belong="espresso" value="americano">Americano</option>
+            <option data-belong="espresso" value="latte">Latte</option>
+            <option data-belong="espresso" value="cappuccino">
+              Cappuccino
+            </option>
+            <option data-belong="espresso" value="flatWhite">Flat White</option>
+
+            <option data-belong="icedCoffee" value="icedCoffee">
+              Iced coffee
+            </option>
+
+            <option data-belong="icedEspresso" value="icedAmericano">
+              Iced Americano
+            </option>
+            <option data-belong="icedEspresso" value="icedLatte">
+              Iced Latte
+            </option>
+            <option data-belong="icedEspresso" value="icedCappuccino">
+              Iced Cappuccino
+            </option>
+            <option data-belong="icedEspresso" value="icedFlatWhite">
+              Iced Flat White
+            </option>
+
+            <option data-belong="coldBrew" value="coldBrew">Cold Brew</option>
+            <option data-belong="coldBrew" value="nitroColdBrew">
+              Nitro Cold Brew
+            </option>
+          </select>
+        </div>
+
+        <button class="btn btn-submit" type="submit">submit</button>
+        <aside class="my-3 reference">
+          **Reference:
+          <a
+            href="https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine"
+            class="reference__link"
+            target="_blank"
+            >The Complete Guide to Starbucks Caffeine</a
+          >
+        </aside>
+      </form>
+
+      <!-- Cups section generated by JS  -->
+    </main>
+
+    <!-- Total Consumption -->
+    <div class="container totalCaffeineContainer">
+      <p class="container">
+        <i class="plus-icon fas fa-plus-circle"></i> Total consumption:
+        <span class="totalCaffeineEl"></span> mg
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer__msg">
+        Suggested daily consumption for adults: Under
+        <span class="footer__highlight">400mg</span> a day
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

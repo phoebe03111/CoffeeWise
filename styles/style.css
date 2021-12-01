@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: bisque;
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+
+.coffee-bean {
+  width: 2.5rem;
+}
+
+.btn-submit {
+  background-color: #6f4722;
+  color: white;
+  text-transform: uppercase;
+}
+.btn-submit:hover {
+  color: white;
+  opacity: 0.9;
+}
+.btn-submit:active {
+  transform: scale(0.96);
+}
+
+.cups {
+  display: flex;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .cups {
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cups {
+    gap: 4rem;
+  }
+}
+.cups__section {
+  margin-bottom: 2rem;
+}
+.cups__name {
+  text-transform: capitalize;
+}
+.cups__cup {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  border-radius: 0 0 1.2rem 1.2rem;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  background-color: #be9b7b;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.cups__cup::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: 0.7rem solid #be9b7b;
+  border-radius: 50%;
+  right: -1.5rem;
+  top: 0.8rem;
+  z-index: -1;
+}
+.cups__cup--tall {
+  width: 5.5rem;
+  height: 5.5rem;
+}
+.cups__cup--tall::before {
+  top: 1rem;
+}
+.cups__cup--grande {
+  width: 6rem;
+  height: 6rem;
+}
+.cups__cup--grande::before {
+  top: 1.2rem;
+}
+.cups__cup--venti {
+  width: 6.5rem;
+  height: 6.5rem;
+}
+.cups__cup--venti::before {
+  top: 1.4rem;
+}
+.cups__cup--active {
+  background-color: #6f4722;
+}
+.cups__cup--active::before {
+  border: 0.7rem solid #6f4722;
+}
+
+.quizApp {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: #be9b7b;
+  width: 13rem;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+.quizApp:hover, .quizApp:active {
+  transform: scale(0.96);
+}
+
+.totalCaffeineContainer {
+  font-size: 1.5rem;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+.plus-icon {
+  color: #be9b7b;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.reference {
+  text-decoration: none;
+  color: gray;
+  font-size: 0.8rem;
+  color: gray;
+}
+.reference__link {
+  font-weight: bold;
+}
+
+.footer__msg {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #6f4722;
+  color: bisque;
+  width: 100%;
+  letter-spacing: 1px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.footer__highlight {
+  font-weight: 700;
+}/*# sourceMappingURL=style.css.map */

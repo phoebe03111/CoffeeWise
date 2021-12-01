@@ -1,0 +1,159 @@
+@use "./partials/global" as *;
+
+.btn-submit {
+  background-color: $color-secondary;
+  color: white;
+  text-transform: uppercase;
+
+  &:hover {
+    color: white;
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.cups {
+  display: flex;
+  gap: 2rem;
+
+  @media screen and (min-width: 768px) {
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 4rem;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+  }
+
+  &__name {
+    text-transform: capitalize;
+  }
+
+  &__cup {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border-radius: 0 0 1.2rem 1.2rem;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    background-color: $color-primary;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      border: 0.7rem solid $color-primary;
+      border-radius: 50%;
+      right: -1.5rem;
+      top: 0.8rem;
+      z-index: -1;
+    }
+
+    &--tall {
+      width: 5.5rem;
+      height: 5.5rem;
+
+      &::before {
+        top: 1rem;
+      }
+    }
+
+    &--grande {
+      width: 6rem;
+      height: 6rem;
+
+      &::before {
+        top: 1.2rem;
+      }
+    }
+
+    &--venti {
+      width: 6.5rem;
+      height: 6.5rem;
+
+      &::before {
+        top: 1.4rem;
+      }
+    }
+
+    &--active {
+      background-color: $color-secondary;
+
+      &::before {
+        border: 0.7rem solid $color-secondary;
+      }
+    }
+  }
+}
+
+.quizApp {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: $color-primary;
+  width: 13rem;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+
+  &:hover,
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.totalCaffeineContainer {
+  font-size: 1.5rem;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+.plus-icon {
+  color: $color-primary;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.reference {
+  text-decoration: none;
+  color: gray;
+  font-size: 0.8rem;
+  color: gray;
+  
+  &__link {
+    font-weight: bold;
+  }
+}
+
+.footer {
+  &__msg {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: $color-secondary;
+    color: $color-bg;
+    width: 100%;
+    letter-spacing: 1px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__highlight {
+    font-weight: 700;
+  }
+}
